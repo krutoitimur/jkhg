@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Страница авторизации</title>
+</head>
+<body>
+
+
+
+  <form action="/signup" method="POST">
+ <input type="text" name="логин" placeholder="Введите логин" required>
+ <br />
+ <input type="password" name="пароль" placeholder="Введите пароль" required>
+ <br />
+ <input type="text" name="никнейм" placeholder="Введите никнейм" required>
+ <br />
+ <button type="submit">Зарегистрироваться</button>
+</form>
+  <script>
+  app.post('/signup', function(req, res) {
+  var логин = req.body.логин;
+  var пароль = req.body.пароль;
+  var никнейм = req.body.никнейм;
+  function redirectToAnotherPage() {
+           // Измените URL на фактический путь к другой странице вашего сайта
+           window.location.href = '.html';
+       }
+
+  // Выполните операцию вставки данных в базу данных здесь
+
+  // Отправьте ответ клиенту
+  res.send('Пользователь успешно зарегистрирован');
+});
+
+
+
+</script>
+
+</body>
+</html>
